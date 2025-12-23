@@ -1,70 +1,214 @@
-# Getting Started with Create React App
+# 🌾 FarmRay - Hệ thống Cảnh báo Mùa vụ cho Nông dân
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> Ứng dụng web thông minh giúp nông dân Đồng bằng sông Cửu Long dự báo thời tiết, sâu bệnh và đưa ra lời khuyên canh tác dựa trên AI.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📖 Giới thiệu
 
-### `npm start`
+**FarmRay** là một dự án web application được thiết kế đặc biệt cho nông dân trồng lúa tại vùng Đồng bằng sông Cửu Long (ĐBSCL). Hệ thống kết hợp dữ liệu thời tiết real-time, trí tuệ nhân tạo (AI) và kiến thức nông nghiệp để:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 🌦️ **Dự báo thời tiết** chi tiết theo từng tỉnh/huyện
+- 🐛 **Cảnh báo sâu bệnh** dựa trên khí hậu và giai đoạn sinh trưởng
+- 💊 **Gợi ý thuốc BVTV** phù hợp với từng loại dịch hại
+- 🤖 **Trợ lý AI** hỗ trợ giải đáp thắc mắc 24/7
+- 🎤 **Giao diện giọng nói** thân thiện với người lớn tuổi
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🎯 Tính năng chính
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 1. Dashboard Thời tiết & Cảnh báo
+- Hiển thị thời tiết hiện tại tại vị trí ruộng lúa (GPS)
+- Dự báo 7 ngày (nhiệt độ, độ ẩm, lượng mưa)
+- Cảnh báo nguy cơ sâu bệnh (Đạo ôn, Rầy nâu, Sâu cuốn lá...)
+- Biểu đồ trực quan, font chữ to, dễ đọc
 
-### `npm run build`
+### 2. Quản lý Vụ mùa
+- Nhập thông tin vụ lúa (ngày sạ, giống lúa, diện tích)
+- Theo dõi tiến độ sinh trưởng
+- Nhắc nhở công việc (rải phân, tưới nước, phun thuốc)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 3. Trợ lý AI Chatbot
+- Hỏi đáp về kỹ thuật canh tác
+- Nhận diện bệnh qua hình ảnh (chụp lá lúa)
+- Gợi ý xử lý sâu bệnh cụ thể
+- Hỗ trợ giọng nói (Speech-to-Text & Text-to-Speech)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 4. Thân thiện với người lớn tuổi
+- Giao diện đơn giản, trực quan
+- Font chữ to (18px mặc định)
+- Nút bấm to (min 44x44px)
+- Tính năng đọc nội dung bằng giọng nói
+- Sử dụng icon + emoji trực quan
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🛠️ Công nghệ sử dụng
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Frontend
+- **React** 19.x - Framework chính
+- **React Router** - Điều hướng trang
+- **Zustand** - State management (nhẹ, đơn giản)
+- **Axios** - HTTP client
+- **TailwindCSS** - Styling
+- **Ant Design Mobile** - UI Components cho mobile
+- **Recharts** - Biểu đồ
+- **Leaflet** - Bản đồ
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Backend (Repository riêng)
+- **Spring Boot** (Java) - RESTful API
+- **Spring Security** - Authentication/Authorization
+- **PostgreSQL/MySQL** - Database chính
+- **AWS S3** - Lưu trữ hình ảnh
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### AI Service (Repository riêng)
+- **Python** (Flask/FastAPI)
+- **Pandas, NumPy** - Xử lý dữ liệu
+- **Scikit-learn** - Machine Learning
+- **OpenAI API / AWS Bedrock** - Chatbot AI
+- **TensorFlow** - Nhận diện hình ảnh
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### External APIs
+- **OpenWeatherMap** - Dữ liệu thời tiết
+- **Web Speech API** - Speech-to-Text, Text-to-Speech
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📦 Cài đặt
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Yêu cầu hệ thống
+- **Node.js** >= 16.x
+- **npm** >= 8.x
 
-### Code Splitting
+### Các bước cài đặt
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. **Clone repository**
+```bash
+git clone https://github.com/your-username/farmray-frontend.git
+cd farmray-frontend
+```
 
-### Analyzing the Bundle Size
+2. **Cài đặt dependencies**
+```bash
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+3. **Cấu hình Environment Variables**
 
-### Making a Progressive Web App
+4. **Chạy development server**
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Ứng dụng sẽ chạy tại [http://localhost:3000](http://localhost:3000)
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 📁 Cấu trúc dự án
 
-### Deployment
+```
+src/
+├── assets/          # Hình ảnh, icons
+├── components/      
+│   ├── common/     # Button, Card, Input...
+│   └── features/   # WeatherCard, AlertCard...
+├── pages/          # HomePage, WeatherPage, ChatBotPage...
+├── services/       # API calls
+├── hooks/          # Custom React hooks
+├── store/          # Zustand stores
+├── utils/          # Helper functions
+├── constants/      # Danh sách tỉnh, sâu bệnh, API endpoints
+└── styles/         # Global CSS
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Xem chi tiết tại [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md)
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🚀 Scripts
+
+### Development
+```bash
+npm start          # Chạy dev server (http://localhost:3000)
+npm test           # Chạy tests
+```
+
+### Production
+```bash
+npm run build      # Build production
+npm run serve      # Serve build folder (cần cài serve: npm i -g serve)
+```
+
+---
+
+## 🌐 Kết nối với Backend & AI
+
+
+## 🎨 Design Principles (Thiết kế cho người lớn tuổi)
+
+### Typography
+- Font size: **18px** (base) - Lớn hơn mặc định
+- Line height: **1.6** - Dễ đọc
+- Font weight: **Medium/Bold** cho tiêu đề
+
+### Colors
+- **Primary**: Xanh lúa `#22c55e` - Màu chủ đạo
+- **Warning**: Vàng `#eab308` - Cảnh báo
+- **Danger**: Đỏ `#ef4444` - Nguy hiểm
+- **Background**: Trắng/Kem nhạt - Dễ nhìn
+- **Text**: Đen đậm - Độ tương phản cao
+
+### Touch Targets
+- Kích thước tối thiểu: **44x44px**
+- Padding lớn cho nút bấm
+- Khoảng cách giữa các nút >= 8px
+
+### Accessibility
+- Hỗ trợ giọng nói (Voice input/output)
+- Icon + Text (không dùng icon đơn thuần)
+- Emoji trực quan (☀️🌧️⚠️🌾)
+
+---
+
+## 📚 Tài liệu tham khảo
+
+- [React Documentation](https://react.dev/)
+- [TailwindCSS Docs](https://tailwindcss.com/docs)
+- [Ant Design Mobile](https://mobile.ant.design/)
+- [OpenWeatherMap API](https://openweathermap.org/api)
+- [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API)
+
+---
+
+## 🤝 Đóng góp
+
+Dự án này là một phần của đồ án tốt nghiệp. Mọi góp ý xin gửi về:
+- Email: your-email@example.com
+- GitHub Issues: [Link Issues](https://github.com/your-username/farmray-frontend/issues)
+
+---
+
+## 📄 License
+
+MIT License - Xem file [LICENSE](LICENSE) để biết thêm chi tiết.
+
+---
+
+## 👨‍💻 Tác giả
+
+**Your Name**  
+Full-stack Developer  : trongtinIUH
+
+---
+
+## 🙏 Lời cảm ơn
+
+- Bộ Nông nghiệp và Phát triển Nông thôn - Cung cấp dữ liệu sâu bệnh
+- Cục Bảo vệ Thực vật - Tài liệu kỹ thuật
+- Nông dân ĐBSCL - Đóng góp ý kiến thực tế
+
+---
+
+**Made with ❤️ for Vietnamese Farmers 🌾**
+# ray-frontend
