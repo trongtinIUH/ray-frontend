@@ -181,13 +181,6 @@ npm run serve      # Serve build folder (cần cài serve: npm i -g serve)
 
 ---
 
-## 🤝 Đóng góp
-
-Dự án này là một phần của đồ án tốt nghiệp. Mọi góp ý xin gửi về:
-- Email: your-email@example.com
-- GitHub Issues: [Link Issues](https://github.com/your-username/farmray-frontend/issues)
-
----
 
 ## 📄 License
 
