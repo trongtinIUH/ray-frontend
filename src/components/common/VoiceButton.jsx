@@ -13,19 +13,27 @@ const VoiceButton = ({ onTranscript, size = 'large' }) => {
 
   if (!supported) {
     return (
-      <div className="text-center p-4 bg-yellow-50 rounded-lg border-2 border-yellow-200">
-        <p className="text-yellow-800 text-lg">
-          ⚠️ Trình duyệt không hỗ trợ ghi âm
+      <div className="text-center p-4 bg-amber-50 rounded-xl border border-amber-200">
+        <p className="text-amber-700 flex items-center gap-2">
+          <i className="fa-solid fa-triangle-exclamation" />
+          Trình duyệt không hỗ trợ ghi âm
         </p>
       </div>
     );
   }
 
   const sizeClasses = {
-    small: 'w-12 h-12 text-xl',
-    medium: 'w-16 h-16 text-2xl',
-    large: 'w-20 h-20 text-3xl',
-    xl: 'w-24 h-24 text-4xl',
+    small: 'w-12 h-12',
+    medium: 'w-14 h-14',
+    large: 'w-16 h-16',
+    xl: 'w-20 h-20',
+  };
+
+  const iconSizes = {
+    small: 'text-lg',
+    medium: 'text-xl',
+    large: 'text-2xl',
+    xl: 'text-3xl',
   };
 
   return (
@@ -33,20 +41,20 @@ const VoiceButton = ({ onTranscript, size = 'large' }) => {
       onClick={isListening ? stopListening : startListening}
       className={`
         ${sizeClasses[size]}
-        rounded-full 
+        rounded-2xl 
         ${isListening 
-          ? 'bg-red-500 animate-pulse shadow-lg shadow-red-300' 
-          : 'bg-primary-500 hover:bg-primary-600'
+          ? 'bg-gradient-to-br from-red-500 to-rose-600 animate-pulse shadow-lg shadow-red-300/50' 
+          : 'bg-gradient-to-br from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 shadow-lg shadow-emerald-300/50'
         }
         text-white
         flex items-center justify-center
-        transition-all duration-200
+        transition-all duration-300
         active:scale-95
-        shadow-xl
+        hover:scale-105
       `}
       aria-label={isListening ? 'Dừng ghi âm' : 'Bắt đầu ghi âm'}
     >
-      {isListening ? '🔴' : '🎤'}
+      <i className={`fa-solid ${isListening ? 'fa-stop' : 'fa-microphone'} ${iconSizes[size]}`} />
     </button>
   );
 };

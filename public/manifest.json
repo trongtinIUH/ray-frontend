@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "FarmRay",
+  "name": "FarmRay - Cảnh báo mùa vụ thông minh",
+  "description": "Ứng dụng hỗ trợ nông dân với AI, cảnh báo thời tiết và sâu bệnh",
   "icons": [
     {
       "src": "favicon.ico",
@@ -10,16 +11,47 @@
     {
       "src": "logo192.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "purpose": "any maskable"
     },
     {
       "src": "logo512.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "any maskable"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "orientation": "portrait",
+  "theme_color": "#22c55e",
+  "background_color": "#f0fdf4",
+  "categories": ["agriculture", "utilities", "weather"],
+  "lang": "vi-VN",
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "shortcuts": [
+    {
+      "name": "Hỏi AI",
+      "short_name": "Chat",
+      "description": "Chat với trợ lý AI",
+      "url": "/chat",
+      "icons": [{ "src": "logo192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Thời tiết",
+      "short_name": "Weather",
+      "description": "Xem dự báo thời tiết",
+      "url": "/weather",
+      "icons": [{ "src": "logo192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Cảnh báo",
+      "short_name": "Alerts",
+      "description": "Xem cảnh báo sâu bệnh",
+      "url": "/alerts",
+      "icons": [{ "src": "logo192.png", "sizes": "192x192" }]
+    }
+  ]
 }

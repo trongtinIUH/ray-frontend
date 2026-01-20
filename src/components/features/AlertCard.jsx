@@ -6,7 +6,7 @@ import { getAlertColor } from '../../utils/formatHelper';
 const AlertCard = ({ alert }) => {
   if (!alert) return null;
 
-  const { type, level, message, disease, treatment } = alert;
+  const { level, message, disease, treatment } = alert;
 
   const levelText = {
     low: 'Thấp',
